@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Card, CardImg, CardBlock, CardTitle, CardSubtitle,
   CardText } from 'reactstrap';
 
-import GoogleMapReact from 'google-map-react';
-
+import SimpleMap from './SimpleMap_comp';
 import SearchBar from './search_bar_comp';
 
 import './launch_screen_comp.css';
@@ -57,27 +56,3 @@ class LaunchScreen extends Component {
 }
 
 export default LaunchScreen;
-
-const AnyReactComponent = ({ text }) => <div className='possibilites'>{text}</div>;
-
-class SimpleMap extends Component {
-  static defaultProps = {
-    center: {lat: 40.7128, lng: -74.0059},
-    zoom: 11
-  };
-
-  render() {
-    return (
-      <GoogleMapReact
-        defaultCenter={this.props.center}
-        defaultZoom={this.props.zoom}
-      >
-        <AnyReactComponent
-          lat={40.6782}
-          lng={-73.9442}
-          text={'HeelingSoles'}
-        />
-      </GoogleMapReact>
-    );
-  }
-}
